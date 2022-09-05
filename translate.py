@@ -2,14 +2,14 @@ import oci
 print(f'OCI Client SDK version: {oci.__version__}')
 
 #assuming ashburn endpoint. For other regions, specify appropriate end point
-endpoint = "https://language.aiservice.us-phoenix-1.oci.oraclecloud.com"
+endpoint = "https://language.aiservice.us-ashburn-1.oci.oraclecloud.com"
 #Ashburn: https://language.aiservice.us-ashburn-1.oci.oraclecloud.com
 #Phoenix: https://language.aiservice.us-phoenix-1.oci.oraclecloud.com
 #Frankfurt: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
 #London: https://language.aiservice.uk-london-1.oci.oraclecloud.com
 #Mumbai: https://language.aiservice.ap-mumbai-1.oci.oraclecloud.com
 
-ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file(),
+ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file(profile_name="specialist2-4sdk"),
                                                     service_endpoint=endpoint)
 
 #specify the documents for translation.
